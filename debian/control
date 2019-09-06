@@ -1,0 +1,74 @@
+Source: biggles
+Section: science
+Priority: extra
+Maintainer: Michael Hirsch <michael.hirsch@stfc.ac.uk>
+Build-Depends: debhelper (>= 8.0.0), cmake,
+ libboost-program-options-dev, libboost-python-dev,
+ libboost-thread-dev, libeigen3-dev, valgrind,
+ libboost-filesystem-dev,
+ libboost-system-dev, doxygen, python-matplotlib,
+ pkg-config, dh-python, python-sphinx,
+ python-numpy, libjansson-dev, texlive-latex-base,
+ python-sklearn, python-joblib, python-qt4, ibus-qt4,
+ python-h5py, python-scipy
+Standards-Version: 3.9.3
+Homepage: https://github.com/fbi-octopus/biggles
+Vcs-Git: git://github.com/fbi-octopus/biggles.git
+Vcs-Browser: http://git.debian.org/?p=collab-maint/biggles.git;a=summary
+
+Package: python-biggles
+Section: python
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends},
+ python-argparse, python-matplotlib, python-numpy, python-qt4, ibus-qt4,
+ python-h5py, python-scipy
+Provides: ${python:Provides}
+Description: Biggles single molecule tracking (Python bindings)
+ Biggles is a system implementing a monte carlo tracking system for use in
+ single-molecule imaging applications.
+ .
+ This package includes the Python bindings.
+
+Package: libbiggles-dev
+Section: libdevel
+Architecture: any
+Depends: libbiggles1 (= ${binary:Version}), ${misc:Depends},
+ libboost-program-options-dev, libboost-python-dev,
+ libboost-thread-dev, libeigen3-dev,
+ libboost-system-dev
+Description: Biggles single molecule tracking (development files)
+ Biggles is a system implementing a monte carlo tracking system for use in
+ single-molecule imaging applications.
+ .
+ This package includes development files
+
+Package: libbiggles1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Biggles single molecule tracking (shared libraries)
+ Biggles is a system implementing a monte carlo tracking system for use in
+ single-molecule imaging applications.
+ .
+ This package includes the shared library files.
+
+Package: libbiggles-doc
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}
+Description: Biggles single molecule tracking (developer documentation)
+ Biggles is a system implementing a monte carlo tracking system for use in
+ single-molecule imaging applications.
+ .
+ This package includes the Doxygen documentation.
+
+Package: biggles
+Section: devel
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python,
+ python-biggles (= ${binary:Version})
+Description: Biggles single molecule tracking (tool binaries)
+ Biggles is a system implementing a monte carlo tracking system for use in
+ single-molecule imaging applications.
+ .
+ This package includes the command line tools

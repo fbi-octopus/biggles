@@ -1,0 +1,7 @@
+build/
+dump/
+.*.swp
+tags
+*.pyc
+__pycache__
+*.log
